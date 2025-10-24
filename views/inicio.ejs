@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title></title>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<style>
+body {
+    background: #f2f2f2;
+    margin-top: 20px;
+}
+.product {
+    background: #fff;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease-in-out;
+}
+.product img {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    width: 100%;
+    height: auto;
+}
+.product .about {
+    padding: 15px 0;
+}
+.product .about h4 {
+    margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: 600;
+}
+.product .about span {
+    font-size: 14px;
+}
+.product .about h3 {
+    color: #e74c3c;
+    font-size: 20px;
+    font-weight: 700;
+}
+.product .dot {
+    background: #3498db;
+    border-radius: 50%;
+    color: #fff;
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.product .dot:hover {
+    background: #2980b9;
+}
+.product .dot .inner-dot {
+    font-size: 20px;
+}
+</style>
+
+<body>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container mt-5">
+    <div class="row d-flex justify-content-center g-1">
+        
+            <%productos.forEach((producto)=>{ %>
+            <div class="col-md-4">
+            <div class="product text-center"> <img src=<%= producto.imagen%> width="">
+                <div class="about text-left px-3">
+                    <h4><%= producto.nombre%></h4> <span class="text-muted"><%= producto.descripcion%></span>
+                    <h3><%= producto.precio%></h3>
+                </div> <span class="dot"><span class="inner-dot"><i class="fa fa-plus"></i></span></span>
+            
+            </div>
+            </div>
+            <% }) %>
+        
+    </div>
+</div>
+</body>
+</html>
