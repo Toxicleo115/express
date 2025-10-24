@@ -12,12 +12,6 @@ const cors = require("cors");
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 
-/*
-const serviceAccount = require("./firebase_key.json");
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount)
-});
-*/
 let serviceAccount;
 
 if (process.env.FIREBASE_SERVICE_ACCOUNT_KEY) {
